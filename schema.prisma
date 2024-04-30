@@ -1,0 +1,15 @@
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://express_user:12345678@localhost:5432/express_db"
+}
+
+model User {
+  id        Int      @id @default(autoincrement()) // Уникальный идентификатор пользователя
+  username  String   // Имя пользователя
+  email     String   // Email пользователя
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
